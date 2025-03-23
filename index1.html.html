@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noppapeli yhdellä nopalla</title>
+    <link rel="stylesheet" href="main2.css">
+    <script src="dice6.js"></script>
+    
+</head>
+<body>
+    <h1>Noppapeli</h1>
+    <div class="text-frame">
+        <div id="nameInput">
+            <p>Syötä pelaajien nimet ja määrä:</p>
+            <input type="text" id="player1Name" placeholder="Pelaaja 1">
+            <input type="text" id="player2Name" placeholder="Pelaaja 2">
+            <input type="text" id="player3Name" placeholder="Pelaaja 3" style="display: none;">
+            <input type="text" id="player4Name" placeholder="Pelaaja 4" style="display: none;">
+            <select id="playerCount" onchange="updatePlayerFields()">
+                <option value="2">2 Pelaajaa</option>
+                <option value="3">3 Pelaajaa</option>
+                <option value="4">4 Pelaajaa</option>
+            </select>
+            <button onclick="startGame()">Aloita peli</button>
+        </div>
+        <div id="game" style="display: none;">
+            <p>Pelaaja: <span id="player">1</span> (<span id="playerName"></span>)</p>
+            <p>Nykyinen kierros: <span id="roundScore">0</span></p>
+            <div>
+                <img id="diceImage" src="img/dice1.png" alt="Noppa">
+            </div>
+            <button id="klikButton" onclick="rollDice()">Heitä noppaa</button>
+            <button id="holdButton" onclick="hold()">Lopeta vuoro</button>
+            <p id="message"></p>
+            <div class="scoreboard" id="scoreboard">
+                <!-- Pistemäärät ja nimet näkyvät tässä allekkain -->
+            </div>
+            <button id="restartButton" onclick="restartGame()" style="display: none;">Aloita uusi peli</button>
+        </div>
+        <audio id="diceSound" src="dice-roll.mp3"></audio>
+    </div>
+
+    
+</body>
+</html>

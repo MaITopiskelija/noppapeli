@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 30px;
+    background-color: rgb(247, 247, 247);
+    
+}
+
+
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .dice-container { display: flex; justify-content: center; gap: 20px; }
+        .dice { width: 100px; height: 100px; transition: transform 0.5s ease-in-out; }
+        .rolling { animation: roll 0.5s linear infinite; }
+        .small-dice { width: 50px; height: 50px; }
+        
+        @keyframes roll {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(90deg); }
+            50% { transform: rotate(180deg); }
+            75% { transform: rotate(270deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Näyttää pisteet ja pelaajat selkeästi */
+        #scoreList {
+            list-style-type: none;
+            padding: 0;
+        }
+        #scoreList li {
+            margin: 10px 0;
+        }
+  
+
+#restartButton {
+    display: block;
+    margin: 20px auto;
+}
+
+#diceImage {
+    margin-bottom: 20px;
+}
+
+#dice1 {
+    margin-bottom: 20px;
+}
+
+
+#klikButton {
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+#pisteetButton {
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.text-frame {
+    border: 2px double black; 
+    padding: 15px;
+    display: inline-block; 
+    font-size: 20px; 
+    font-weight: bold;
+    background-image: url('tausta_kuva.PNG');
+    background-size: cover; 
+    background-position: center; 
+    color: rgb(0, 0, 0); 
+}

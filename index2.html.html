@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noppapeli</title>
+    <link rel="stylesheet" href="main3.css"> 
+    <script src="dice5.js"></script>
+  
+    
+</head>
+<body>
+    <h1>Noppapeli</h1>
+    <div class="text-frame">
+        <img src="img/dice1.png" alt="Pieni noppa" class="small-dice">
+        
+        <div id="nameInput">
+            <p>Syötä pelaajien nimet:</p>
+            <!-- Syötetään pelaajien nimet ja valitaan pelaajamäärä -->
+            <input type="text" id="player1Name" placeholder="Pelaaja 1">
+            <input type="text" id="player2Name" placeholder="Pelaaja 2">
+            <input type="text" id="player3Name" placeholder="Pelaaja 3" style="display: none;">
+            <input type="text" id="player4Name" placeholder="Pelaaja 4" style="display: none;">
+            
+            <!-- Pelaajamäärän valinta -->
+            <select id="playerCount" onchange="updatePlayerFields()">
+                <option value="2">2 Pelaajaa</option>
+                <option value="3">3 Pelaajaa</option>
+                <option value="4">4 Pelaajaa</option>
+            </select>
+            
+            <button onclick="startGame()">Aloita peli</button>
+        </div>
+        
+        <div id="game" style="display: none;">
+            <p>Pelaaja: <span id="player">1</span> (<span id="playerName"></span>)</p>
+            <p>Nykyinen kierros: <span id="roundScore">0</span></p>
+            <div class="dice-container">
+                <img id="dice1" class="dice" src="img/dice1.png" alt="Noppa 1">
+                <img id="dice2" class="dice" src="img/dice1.png" alt="Noppa 2">
+            </div>
+            <button id="klikButton" onclick="rollDice()">HEITÄ NOPPAA</button>
+            <button id="pisteetButton" onclick="hold()">PIDÄ PISTEET</button>
+            <button id="restartButton" onclick="restartGame()" style="display: none;">Aloita uusi peli</button>
+            <p id="message"></p>
+        </div>
+        
+        <!-- Näytetään pelaajien pisteet ja nimet -->
+        <ul id="scoreList">
+            <!-- Pelaajat ja heidän pistemääränsä tulevat tähän -->
+        </ul>
+    </div>
+    
+    <audio id="diceSound" src="dice-roll.mp3"></audio>
+
+    
+</body>
+</html>
